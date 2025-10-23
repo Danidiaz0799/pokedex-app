@@ -84,12 +84,20 @@
   }
   
   .pokemon-card__image-container {
-    height: 110px;
-    margin: 1rem 0 0.75rem;
+    height: 140px;
+    margin: 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .pokemon-card__image {
+    width: 120%;
+    height: 120%;
+    max-width: none;
   }
   
   .pokemon-card__name {
     font-size: 1rem;
+    padding-top: 0.5rem;
   }
 
   .pokemon-card__number .pokemon-number {

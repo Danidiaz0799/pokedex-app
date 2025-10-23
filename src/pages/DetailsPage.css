@@ -166,7 +166,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: -70px;
-  margin-top: -80px;
+  margin-top: -50px;
   z-index: 10;
 }
 
@@ -384,7 +384,7 @@
 
   .details-image-container {
     height: 240px;
-    margin-top: -60px;
+    margin-top: -10px;
   }
 
   .details-image,
@@ -394,7 +394,7 @@
   }
 
   .details-content {
-    padding: 4rem 1.5rem 2rem;
+    padding: 1rem 1.5rem 2rem;
   }
 
   .details-info-grid {
@@ -422,10 +422,6 @@
   .details-image-bg {
     width: 200px;
     height: 200px;
-  }
-
-  .details-content {
-    padding: 3.5rem 1.5rem 2rem;
   }
 
   .details-info-grid {
