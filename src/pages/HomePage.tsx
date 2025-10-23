@@ -2,8 +2,9 @@ import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { SortOrder, Pokemon } from '../types/pokemon';
 import { usePokemons } from '../hooks';
+import { useFavorites } from '../context/FavoritesContext';
 import { Header } from '../components/molecules';
-import { PokemonGrid, TypeFilterList } from '../components/organisms';
+import { PokemonGrid } from '../components/organisms';
 import { MainLayout } from '../components/templates';
 
 /**
@@ -15,23 +16,35 @@ import { MainLayout } from '../components/templates';
  */
 const HomePage = () => {
   const navigate = useNavigate();
+  const { favorites } = useFavorites();
   const [sortBy, setSortBy] = useState<SortOrder>('number');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState<string | null>(null);
+  const [showFavoritesOnly, setShowFavoritesOnly] = useState(false);
   
   const { pokemons, loading, error } = usePokemons({ 
     sortBy, 
     searchTerm 
   });
 
-  // Filtrar Pokémon por tipo en el cliente
+  // Filtrar Pokémon por tipo y favoritos
   const filteredPokemons = useMemo(() => {
-    if (!selectedType) return pokemons;
+    let filtered = pokemons;
     
-    return pokemons.filter((pokemon) =>
-      pokemon.types.some((t) => t.type.name === selectedType)
-    );
-  }, [pokemons, selectedType]);
+    // Filtrar por tipo
+    if (selectedType) {
+      filtered = filtered.filter((pokemon) =>
+        pokemon.types.some((t) => t.type.name === selectedType)
+      );
+    }
+    
+    // Filtrar por favoritos
+    if (showFavoritesOnly) {
+      filtered = filtered.filter((pokemon) => favorites.includes(pokemon.id));
+    }
+    
+    return filtered;
+  }, [pokemons, selectedType, showFavoritesOnly, favorites]);
 
   const handlePokemonClick = (pokemon: Pokemon) => {
     navigate(`/pokemon/${pokemon.id}`);
@@ -51,6 +64,11 @@ const HomePage = () => {
             onSearchChange={setSearchTerm}
             sortBy={sortBy}
             onSortChange={setSortBy}
+            showFavoritesOnly={showFavoritesOnly}
+            onToggleFavorites={() => setShowFavoritesOnly(!showFavoritesOnly)}
+            favoritesCount={favorites.length}
+            selectedType={selectedType}
+            onTypeSelect={handleTypeSelect}
           />
         }
       >
@@ -80,15 +98,14 @@ const HomePage = () => {
           onSearchChange={setSearchTerm}
           sortBy={sortBy}
           onSortChange={setSortBy}
+          showFavoritesOnly={showFavoritesOnly}
+          onToggleFavorites={() => setShowFavoritesOnly(!showFavoritesOnly)}
+          favoritesCount={favorites.length}
+          selectedType={selectedType}
+          onTypeSelect={handleTypeSelect}
         />
       }
     >
-      {/* Filtro por tipo */}
-      <TypeFilterList
-        selectedType={selectedType}
-        onSelectType={handleTypeSelect}
-      />
-      
       {/* Lista de Pokémon */}
       <PokemonGrid
         pokemons={filteredPokemons}

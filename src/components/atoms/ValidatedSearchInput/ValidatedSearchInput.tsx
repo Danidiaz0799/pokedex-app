@@ -21,23 +21,31 @@ const ValidatedSearchInput = ({
   placeholder = 'Search Pokémon...' 
 }: ValidatedSearchInputProps) => {
   const [error, setError] = useState<string | null>(null);
+  const [inputValue, setInputValue] = useState(value);
 
   const handleChange = (newValue: string) => {
+    // Actualizar el valor visual del input siempre
+    setInputValue(newValue);
+    
     const validation: ValidationResult = validateSearchInput(newValue);
-
+    
     if (validation.isValid) {
-      // Entrada válida: actualizar valor y limpiar error
+      // Entrada válida (vacía o 3+ caracteres): actualizar búsqueda
       setError(null);
       onChange(newValue);
-    } else {
-      // Entrada inválida: mostrar error y NO actualizar la búsqueda
+    } else if (newValue.trim().length < 3 && newValue.trim().length > 0) {
+      // Entre 1-2 caracteres: mostrar error pero mantener búsqueda vacía
       setError(validation.errorMessage || 'Invalid input');
-      // No llamamos onChange para prevenir filtrado con entrada inválida
+      onChange('');
+    } else {
+      // Otros errores (caracteres especiales)
+      setError(validation.errorMessage || 'Invalid input');
     }
   };
 
   const handleClear = () => {
     setError(null);
+    setInputValue('');
     onChange('');
   };
 
@@ -58,13 +66,13 @@ const ValidatedSearchInput = ({
         <input
           type="text"
           className="validated-search-input"
-          value={value}
+          value={inputValue}
           onChange={(e) => handleChange(e.target.value)}
           placeholder={placeholder}
           aria-invalid={error !== null}
           aria-describedby={error ? 'search-error' : undefined}
         />
-        {value && (
+        {inputValue && (
           <button 
             className="clear-button"
             onClick={handleClear}
