@@ -1,5 +1,6 @@
 import type { Pokemon } from '../../types/pokemon';
 import { PokemonCard } from '../molecules';
+import { PokeballIcon } from '../atoms';
 import './PokemonGrid.css';
 
 interface PokemonGridProps {
@@ -28,7 +29,7 @@ const PokemonGrid = ({
       <div className="pokemon-grid-state">
         <div className="pokemon-grid-loader">
           <div className="pokeball-loader">
-            <div className="pokeball-loader__ball"></div>
+            <PokeballIcon size={80} color="#DC0A2D" />
           </div>
           <p>Loading Pokémon...</p>
         </div>

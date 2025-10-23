@@ -9,3 +9,4 @@ export { default as ValidatedSearchInput } from './ValidatedSearchInput/Validate
 export { default as SortButton } from './SortButton';
 export { default as FavoriteButton } from './FavoriteButton';
 export { default as StatBar } from './StatBar';
+export { PokeballIcon } from './PokeballIcon';

@@ -26,40 +26,7 @@
 .pokeball-loader {
   display: inline-block;
   margin-bottom: 1rem;
-}
-
-.pokeball-loader__ball {
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(to bottom, #dc0a2d 50%, white 50%);
-  border-radius: 50%;
-  border: 4px solid #333;
-  position: relative;
   animation: spin 1s linear infinite;
-}
-
-.pokeball-loader__ball::before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border: 4px solid #333;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.pokeball-loader__ball::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  background: #333;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
 }
 
 @keyframes spin {

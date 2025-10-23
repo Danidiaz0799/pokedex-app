@@ -1,8 +1,9 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import { usePokemonDetails } from '../hooks';
 import { useFavorites } from '../context/FavoritesContext';
 import { capitalize, getTypeColor, getPokemonImageUrl } from '../utils';
-import { TypeBadge, PokemonNumber, FavoriteButton, StatBar } from '../components/atoms';
+import { TypeBadge, PokemonNumber, FavoriteButton, StatBar, PokeballIcon } from '../components/atoms';
 import './DetailsPage.css';
 
 /**
@@ -16,6 +17,34 @@ const DetailsPage = () => {
   
   const { pokemon, loading, error } = usePokemonDetails({ id: pokemonId });
   const { isFavorite, toggleFavorite } = useFavorites();
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // Obtener el color principal basado en el primer tipo
+  const primaryType = pokemon?.types[0]?.type.name || 'normal';
+  const backgroundColor = getTypeColor(primaryType);
+
+  // Aplicar color del scrollbar dinámicamente
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (wrapper && !loading && !error) {
+      const style = document.createElement('style');
+      style.textContent = `
+        .details-page__wrapper::-webkit-scrollbar-thumb {
+          background: ${backgroundColor} !important;
+        }
+        .details-page__wrapper::-webkit-scrollbar-thumb:hover {
+          background: ${backgroundColor}dd !important;
+        }
+      `;
+      wrapper.appendChild(style);
+      
+      return () => {
+        if (wrapper && style.parentNode) {
+          wrapper.removeChild(style);
+        }
+      };
+    }
+  }, [backgroundColor, loading, error]);
 
   // Loading state
   if (loading) {
@@ -23,7 +52,7 @@ const DetailsPage = () => {
       <div className="details-page details-page--loading">
         <div className="details-loader">
           <div className="pokeball-loader">
-            <div className="pokeball-loader__ball"></div>
+            <PokeballIcon size={80} color="#DC0A2D" />
           </div>
           <p>Loading Pokémon details...</p>
         </div>
@@ -49,10 +78,6 @@ const DetailsPage = () => {
     );
   }
 
-  // Obtener el color principal basado en el primer tipo
-  const primaryType = pokemon.types[0]?.type.name || 'normal';
-  const backgroundColor = getTypeColor(primaryType);
-
   // Mapeo de nombres de stats a etiquetas
   const statLabels: Record<string, string> = {
     hp: 'HP',
@@ -65,33 +90,58 @@ const DetailsPage = () => {
 
   return (
     <div className="details-page" style={{ 
-      backgroundColor, 
       '--type-color': backgroundColor 
     } as React.CSSProperties}>
-      {/* Header con botón de volver */}
-      <header className="details-header">
-        <button className="back-button" onClick={() => navigate(-1)}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M19 12H5M12 19l-7-7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <div className="details-page__wrapper" ref={wrapperRef} style={{ 
+        '--type-color': backgroundColor 
+      } as React.CSSProperties}>
+        {/* Header con botón de volver */}
+        <header className="details-header">
+          <div className="details-header__left">
+            <button className="back-button" onClick={() => navigate(-1)}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M19 12H5M12 19l-7-7 7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <h1 className="details-header__name">{capitalize(pokemon.name)}</h1>
+          </div>
+
+          <div className="details-header__right">
+            <div className="details-header__number">
+              <PokemonNumber id={pokemon.id} />
+            </div>
+            <FavoriteButton
+              isFavorite={isFavorite(pokemon.id)}
+              onClick={() => toggleFavorite(pokemon.id)}
+            />
+          </div>
+        </header>
+
+        {/* Botones de navegación entre Pokémon */}
+        <button 
+          className="pokemon-nav-btn pokemon-nav-btn--prev"
+          onClick={() => navigate(`/pokemon/${Math.max(1, pokemon.id - 1)}`)}
+          disabled={pokemon.id <= 1}
+          aria-label="Previous Pokémon"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+            <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        
-        <div className="details-header__info">
-          <h1 className="details-header__name">{capitalize(pokemon.name)}</h1>
-          <div className="details-header__number">
-            <PokemonNumber id={pokemon.id} />
-          </div>
-        </div>
 
-        <FavoriteButton
-          isFavorite={isFavorite(pokemon.id)}
-          onClick={() => toggleFavorite(pokemon.id)}
-        />
-      </header>
+        <button 
+          className="pokemon-nav-btn pokemon-nav-btn--next"
+          onClick={() => navigate(`/pokemon/${Math.min(151, pokemon.id + 1)}`)}
+          disabled={pokemon.id >= 151}
+          aria-label="Next Pokémon"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+            <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
 
-      {/* Imagen del Pokémon */}
-      <div className="details-image-container">
-        <div className="details-image-bg"></div>
+        {/* Imagen del Pokémon */}
+        <div className="details-image-container">
         <img 
           src={getPokemonImageUrl(pokemon)} 
           alt={pokemon.name}
@@ -154,6 +204,7 @@ const DetailsPage = () => {
             </div>
           </section>
         )}
+      </div>
       </div>
     </div>
   );

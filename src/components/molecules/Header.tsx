@@ -1,5 +1,5 @@
 import type { SortOrder } from '../../types/pokemon';
-import { ValidatedSearchInput } from '../atoms';
+import { ValidatedSearchInput, PokeballIcon } from '../atoms';
 import SortDropdown from './SortDropdown/SortDropdown';
 import { TypeFilterList } from '../organisms';
 import './Header.css';
@@ -37,16 +37,7 @@ const Header = ({
         {/* Logo y título */}
         <div className="header__brand">
           <div className="header__logo">
-            <svg width="50" height="50" viewBox="0 0 100 100" fill="none">
-              {/* Círculo completo blanco de fondo */}
-              <circle cx="50" cy="50" r="45" fill="white"/>
-              {/* Línea horizontal roja */}
-              <line x1="5" y1="50" x2="95" y2="50" stroke="#DC0A2D" strokeWidth="8"/>
-              {/* Círculo central externo */}
-              <circle cx="50" cy="50" r="15" fill="white" stroke="#DC0A2D" strokeWidth="8"/>
-              {/* Círculo central interno */}
-              <circle cx="50" cy="50" r="8" fill="white" stroke="#DC0A2D" strokeWidth="3"/>
-            </svg>
+            <PokeballIcon size={50} color="#DC0A2D" />
           </div>
           <h1 className="header__title">Pokédex</h1>
         </div>
