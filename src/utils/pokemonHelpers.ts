@@ -162,7 +162,6 @@ export interface ValidationResult {
 /**
  * Valida la entrada de búsqueda
  * Reglas:
- * - Mínimo 3 caracteres
  * - Solo letras (sin números ni caracteres especiales)
  * - Permite cadena vacía (para limpiar búsqueda)
  */
@@ -170,14 +169,6 @@ export const validateSearchInput = (input: string): ValidationResult => {
   // Permitir cadena vacía para limpiar búsqueda
   if (input.trim() === '') {
     return { isValid: true };
-  }
-
-  // Validar longitud mínima
-  if (input.trim().length < 3) {
-    return {
-      isValid: false,
-      errorMessage: 'Search must be at least 3 characters',
-    };
   }
 
   // Validar que solo contenga letras (sin números ni caracteres especiales)

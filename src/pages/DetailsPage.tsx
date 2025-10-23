@@ -158,9 +158,11 @@ const DetailsPage = () => {
           ))}
         </div>
 
-        {/* Sección About */}
+        {/* Sección unificada About + Stats */}
         <section className="details-section">
           <h2 className="details-section__title">About</h2>
+          
+          {/* Info Grid (Weight & Height) */}
           <div className="details-info-grid">
             <div className="details-info-item">
               <div className="details-info-item__icon">
@@ -183,27 +185,28 @@ const DetailsPage = () => {
             </div>
           </div>
           
+          {/* Description */}
           <p className="details-description">
             A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.
           </p>
-        </section>
 
-        {/* Sección Base Stats */}
-        {pokemon.stats && pokemon.stats.length > 0 && (
-          <section className="details-section">
-            <h2 className="details-section__title">Base Stats</h2>
-            <div className="details-stats">
-              {pokemon.stats.map((stat, index) => (
-                <StatBar
-                  key={index}
-                  label={statLabels[stat.stat.name] || stat.stat.name}
-                  value={stat.base_stat}
-                  color={backgroundColor}
-                />
-              ))}
-            </div>
-          </section>
-        )}
+          {/* Base Stats dentro de la misma sección */}
+          {pokemon.stats && pokemon.stats.length > 0 && (
+            <>
+              <h3 className="details-stats__title">Base Stats</h3>
+              <div className="details-stats">
+                {pokemon.stats.map((stat, index) => (
+                  <StatBar
+                    key={index}
+                    label={statLabels[stat.stat.name] || stat.stat.name}
+                    value={stat.base_stat}
+                    color={backgroundColor}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </section>
       </div>
       </div>
     </div>

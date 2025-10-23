@@ -12,7 +12,6 @@ interface ValidatedSearchInputProps {
 /**
  * Atom: ValidatedSearchInput
  * Input de búsqueda con validación de entrada
- * - Mínimo 3 caracteres
  * - Solo letras (sin números ni caracteres especiales)
  */
 const ValidatedSearchInput = ({ 
@@ -30,15 +29,11 @@ const ValidatedSearchInput = ({
     const validation: ValidationResult = validateSearchInput(newValue);
     
     if (validation.isValid) {
-      // Entrada válida (vacía o 3+ caracteres): actualizar búsqueda
+      // Entrada válida: actualizar búsqueda
       setError(null);
       onChange(newValue);
-    } else if (newValue.trim().length < 3 && newValue.trim().length > 0) {
-      // Entre 1-2 caracteres: mostrar error pero mantener búsqueda vacía
-      setError(validation.errorMessage || 'Invalid input');
-      onChange('');
     } else {
-      // Otros errores (caracteres especiales)
+      // Caracteres especiales o números
       setError(validation.errorMessage || 'Invalid input');
     }
   };

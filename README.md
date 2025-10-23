@@ -1,428 +1,743 @@
-# 🎮 Pokédex App# 🎮 Pokédex App# 🎮 Pokédex App# 🎮 Pokédex App# 🎮 Pokédex App# 🎮 Pokédex App# React + TypeScript + Vite
+# 🎮 Pokédex App# 🎮 Pokédex App
 
 
 
-Modern web application built with **React 19**, **TypeScript**, and **Vite** that consumes the **PokeAPI GraphQL** to display detailed information of the first 151 Pokémon.
+Interactive web application to explore and search the first 151 Pokémon with real-time data from PokeAPI GraphQL.Interactive web application to explore and search the first 151 Pokémon with real-time data from PokeAPI GraphQL.
 
 
 
-**🚀 Live Demo:** [https://precious-empanada-59452a.netlify.app](https://precious-empanada-59452a.netlify.app)Modern web application built with React 19, TypeScript, and Vite that consumes the PokeAPI GraphQL to display detailed information of the first 151 Pokémon.
+**🚀 Live Demo:** [https://precious-empanada-59452a.netlify.app](https://precious-empanada-59452a.netlify.app)**🚀 Live Demo:** [https://precious-empanada-59452a.netlify.app](https://precious-empanada-59452a.netlify.app)
 
 
 
-![Pokédex App](https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react)
-
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript)
-
-![Vite](https://img.shields.io/badge/Vite-7.1.11-646CFF?style=for-the-badge&logo=vite)**🚀 Live Demo:** [https://precious-empanada-59452a.netlify.app](https://precious-empanada-59452a.netlify.app)# 🎮 Pokédex App
-
-![Tests](https://img.shields.io/badge/Tests-27%20passing-success?style=for-the-badge)
+## 🎯 Features## 🎯 Features
 
 
 
----
+- 🔍 **Smart Search** - Validated input with minimum 3 characters and alphabetic filtering- 🔍 **Smart Search** - Validated input with minimum 3 characters and alphabetic filtering
 
-## 🎯 Features> Aplicación web moderna de Pokédex construida con **React 19**, **TypeScript** y **Vite**, que consume la **PokeAPI GraphQL** para mostrar información detallada de los 151 Pokémon de la primera generación.
+- 🎨 **Type Filter** - Browse Pokémon by any of the 18 types with dropdown menu- 🎨 **Type Filter** - Browse Pokémon by any of the 18 types with dropdown menu
 
-## 🎯 Features
+- 🔢 **Sorting Options** - Toggle between Pokédex number (#) or alphabetical (A) order- 🔢 **Sorting Options** - Toggle between Pokédex number (#) or alphabetical (A) order
+
+- ⭐ **Favorites** - Save and filter your favorite Pokémon (persisted in localStorage)- ⭐ **Favorites** - Save and filter your favorite Pokémon (persisted in localStorage)
+
+- 📄 **Detailed View** - Complete stats, abilities, weight, height, and type information- � **Detailed View** - Complete stats, abilities, weight, height, and type information
+
+- 🎨 **Dynamic Theming** - Interface colors adapt to each Pokémon's primary type- 🎨 **Dynamic Theming** - Interface colors adapt to each Pokémon's primary type
+
+- 🧭 **SPA Navigation** - Smooth navigation between Pokémon with previous/next buttons- 🧭 **SPA Navigation** - Smooth navigation between Pokémon with previous/next buttons
+
+- 📱 **Responsive Design** - Optimized layout for mobile, tablet, and desktop- 📱 **Responsive Design** - Optimized layout for mobile, tablet, and desktop
+
+- ⚡ **Real-time Updates** - Live connection indicator and instant data refresh- ⚡ **Real-time Updates** - Live connection indicator and instant data refresh
 
 
 
-- 🔍 **Validated Search** - Search system with validation (minimum 3 characters, letters only)
+## 🏗️ Tech Stack## 🏗️ Tech Stack
 
-- 🎨 **Type Filtering** - Filter Pokémon by any of the 18 available types- 🔍 **Validated Search** - Search system with validation (minimum 3 characters, letters only)## 🔗 Demo en Vivo
 
-- 🔢 **Dynamic Sorting** - Sort by Pokédex number or alphabetically with visual indicator (# / A)
 
-- 📄 **Details Page** - Complete information with stats, weight, height, and types- 🎨 **Type Filtering** - Filter Pokémon by any of the 18 available types
+### Core### Core
 
-- ⭐ **Favorites System** - Save your favorite Pokémon with localStorage persistence
+- React 19.1.1 with modern hooks- React 19.1.1 with modern hooks
 
-- 🧭 **SPA Navigation** - Routing with React Router DOM without page reloads- 🔢 **Dynamic Sorting** - Sort by Pokédex number or alphabetically with visual indicator (# / A)**🚀 [Ver Aplicación Desplegada](https://precious-empanada-59452a.netlify.app)**
+- TypeScript 5.9.3 for type safety- TypeScript 5.9.3 for type safety
 
-- 📱 **Responsive Design** - Optimized for desktop, tablet, and mobile
+- Vite 7.1.11 as build tool- Vite 7.1.11 as build tool
 
-- ⚡ **GraphQL Client** - Efficient data consumption with Apollo Client and cache- 📄 **Details Page** - Complete information with stats, weight, height, and types
+- Pure CSS (no UI frameworks)- Pure CSS (no UI frameworks)
 
-- 🧪 **Unit Tests** - 27 tests passing with Vitest and Testing Library
 
-- ⭐ **Favorites System** - Save your favorite Pokémon with localStorage persistence> 🔐 Password temporal: `My-Drop-Site` (se eliminará al crear cuenta gratuita en Netlify)
 
----
+### Data & State### Data & State
 
-- 🧭 **SPA Navigation** - Routing with React Router DOM without page reloads
+- Apollo Client 4.0.7 for GraphQL- Apollo Client 4.0.7 for GraphQL
 
-## 🏗️ Tech Stack
+- React Router DOM 7.9.4 for routing- React Router DOM 7.9.4 for routing
 
-- 📱 **Responsive Design** - Optimized for desktop, tablet, and mobile---
+- localStorage for favorites persistence- localStorage for favorites persistence
 
-| Technology | Version | Purpose |
+- PokeAPI GraphQL v1beta- PokeAPI GraphQL v1beta
 
-|------------|---------|---------|- ⚡ **GraphQL Client** - Efficient data consumption with Apollo Client and cache
 
-| **React** | 19.1.1 | UI library with modern hooks |
 
-| **TypeScript** | 5.9.3 | Static typing and better DX |- 🧪 **Unit Tests** - 27 tests passing with Vitest and Testing Library
+### Testing### Testing
 
-| **Vite** | 7.1.11 | Ultra-fast build tool |
+- Vitest 4.0.1- Vitest 4.0.1
 
-| **Apollo Client** | 4.0.7 | GraphQL client with cache |
+- Testing Library (React)- Testing Library (React)
 
-| **React Router DOM** | 7.9.4 | SPA routing |
+- 27 unit tests passing ✅- 27 unit tests passing ✅
 
-| **Vitest** | 4.0.1 | Testing framework |## 🏗️ Tech Stack## 🔗 Demo en VivoAplicación web moderna de Pokédex construida con **React 19**, **TypeScript** y **Vite**, que consume la **PokeAPI GraphQL** para mostrar información detallada de los 151 Pokémon de la primera generación.
 
-| **Testing Library** | Latest | React component testing |
 
-| **Pure CSS** | - | Styles without frameworks |
+## 📁 Project Structure## 📁 Project Structure
 
-| **PokeAPI GraphQL** | v1beta | Pokémon data API |
 
-| Technology | Version | Purpose |
 
----
+``````
 
-|------------|---------|---------|
+pokedex-app/pokedex-app/
 
-## 📁 Project Structure (Atomic Design)
+├── src/├── src/
 
-| **React** | 19.1.1 | UI library with modern hooks |**🚀 [Ver Aplicación Desplegada](#)** _(Actualizar después del deploy)_
+│   ├── components/             # Organized by Atomic Design│   ├── components/
 
-```
+│   │   ├── atoms/              # Basic reusable components│   │   ├── atoms/              # Basic reusable components
 
-pokedex-app/| **TypeScript** | 5.9.3 | Static typing and better DX |
+│   │   │   ├── TypeBadge       # Type badges with colors
 
-├── src/
+│   │   │   ├── PokemonNumber   # Formatted ID display│   │   ├── molecules/          # Atom combinations| **Apollo Client** | 4.0.7 | GraphQL client with cache |
 
-│   ├── components/| **Vite** | 7.1.11 | Ultra-fast build tool |
+│   │   │   ├── FavoriteButton  # Heart icon toggle
 
-│   │   ├── atoms/              # Basic components
+│   │   │   ├── PokeballIcon    # Reusable loading icon│   │   ├── organisms/          # Complex sections
 
-│   │   ├── molecules/          # Atom combinations| **Apollo Client** | 4.0.7 | GraphQL client with cache |
+│   │   │   ├── StatBar         # Progress bar for stats
+
+│   │   │   └── ValidatedSearchInput/│   │   └── templates/          # Layouts| **React Router DOM** | 7.9.4 | SPA routing |---## ✨ CaracterísticasAplicación web moderna de Pokédex construida con React, TypeScript y Vite, consumiendo la PokeAPI GraphQL.
+
+│   │   │
+
+│   │   ├── molecules/          # Combinations of atoms│   ├── pages/                  # HomePage, DetailsPage
+
+│   │   │   ├── PokemonCard     # Grid card with image
+
+│   │   │   ├── Header          # Top navigation bar│   ├── hooks/                  # Custom Hooks| **Vitest** | 4.0.1 | Testing framework |
+
+│   │   │   └── SortDropdown/   # Sort selector
+
+│   │   ││   ├── graphql/                # GraphQL Queries
 
 │   │   ├── organisms/          # Complex sections
 
-│   │   └── templates/          # Layouts| **React Router DOM** | 7.9.4 | SPA routing |---## ✨ CaracterísticasAplicación web moderna de Pokédex construida con React, TypeScript y Vite, consumiendo la PokeAPI GraphQL.
+│   │   │   ├── PokemonGrid     # Responsive grid layout│   ├── context/                # React Context (Favorites)| **Testing Library** | Latest | React component testing |
 
-│   ├── pages/                  # HomePage, DetailsPage
+│   │   │   └── TypeFilterList/ # Type dropdown filter
 
-│   ├── hooks/                  # Custom Hooks| **Vitest** | 4.0.1 | Testing framework |
+│   │   ││   ├── types/                  # TypeScript Definitions
 
-│   ├── graphql/                # GraphQL Queries
+│   │   └── templates/
 
-│   ├── context/                # React Context (Favorites)| **Testing Library** | Latest | React component testing |
-
-│   ├── types/                  # TypeScript Definitions
-
-│   ├── utils/                  # Utilities| **Pure CSS** | - | Styles without frameworks |
-
-│   ├── config/                 # Apollo Client config
-
-│   └── test/                   # Unit tests (27 tests)| **PokeAPI GraphQL** | v1beta | Pokémon data API |## ✨ Características
-
-├── public/
-
-│   └── _redirects              # Netlify SPA redirects
-
-├── netlify.toml                # Netlify configuration
-
-└── vitest.config.ts            # Vitest configuration## 📁 Project Structure (Atomic Design)
-
-```
-
-
-
----
-
-```- ✅ **Lista de Pokémon**: Visualización de los 151 Pokémon originales con imágenes official artwork- ✅ **Lista de Pokémon**: Visualización de los 151 Pokémon originales con imágenes official artwork
-
-## 🚀 Quick Start
-
-pokedex-app/
-
-### Prerequisites
-
-├── public/- ✅ **Búsqueda Validada**: Sistema de búsqueda con validación (mínimo 3 caracteres, solo letras)
-
-- Node.js 18+ 
-
-- npm or yarn│   └── _redirects              # Netlify redirects for SPA
-
-
-
-### Installation│- ✅ **Filtrado por Tipo**: Filtra Pokémon por cualquiera de los 18 tipos disponibles- ✅ **Búsqueda Validada**: Sistema de búsqueda con validación (mínimo 3 caracteres, solo letras)
-
-
-
-```bash├── src/
-
-# Clone the repository
-
-git clone https://github.com/Danidiaz0799/pokedex-app.git│   ├── components/             # Components organized by Atomic Design- ✅ **Ordenamiento Dinámico**: Ordena por número de Pokédex o alfabéticamente con indicador visual
-
-cd pokedex-app
-
-│   │   ├── atoms/              # Basic components
-
-# Install dependencies
-
-npm install│   │   │   ├── TypeBadge.tsx/css- ✅ **Página de Detalles**: Información completa con estadísticas, peso, altura y tipos- ✅ **Filtrado por Tipo**: Filtra Pokémon por cualquiera de los 18 tipos disponibles## 🚀 TecnologíasAplicación web moderna de Pokédex construida con React, TypeScript y Vite, consumiendo la PokeAPI GraphQL.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-
-
-# Start development server│   │   │   ├── PokemonNumber.tsx/css
-
-npm run dev
-
-```│   │   │   ├── ValidatedSearchInput/- ✅ **Sistema de Favoritos**: Guarda tus Pokémon favoritos con persistencia en localStorage
-
-
-
-Application available at: **http://localhost:5173**│   │   │   ├── FavoriteButton.tsx/css
-
-
-
-### Available Scripts│   │   │   └── StatBar.tsx/css- ✅ **Navegación SPA**: Routing con React Router DOM sin recargas de página- ✅ **Ordenamiento**: Ordena por número de Pokédex o alfabéticamente
-
-
-
-```bash│   │   │
-
-npm run dev              # Development server
-
-npm run build            # Build for production│   │   ├── molecules/          # Atom combinations- ✅ **Diseño Responsive**: Optimizado para desktop, tablet y mobile
-
-npm run preview          # Preview production build
-
-npm run lint             # Run ESLint│   │   │   ├── PokemonCard.tsx/css
-
-npm test                 # Tests in watch mode
-
-npm run test:coverage    # Generate coverage report│   │   │   ├── Header.tsx/css- ✅ **GraphQL Client**: Consumo eficiente de datos con Apollo Client y cache- ✅ **Página de Detalles**: Información completa con estadísticas, peso, altura y tipos
-
-```
-
-│   │   │   └── SortDropdown/
-
----
-
-│   │   │- ✅ **Tests Unitarios**: 27 tests pasando con Vitest y Testing Library
-
-## 🧪 Testing
-
-│   │   ├── organisms/          # Complex sections
-
-The project includes **27 unit tests** with Vitest and Testing Library.
-
-│   │   │   ├── PokemonGrid.tsx/css- ✅ **Sistema de Favoritos**: Guarda tus Pokémon favoritos con persistencia en localStorage
-
-### Run Tests
-
-│   │   │   └── TypeFilterList/
-
-```bash
-
-npm test                 # Watch mode│   │   │---
-
-npm test -- --run        # Run once
-
-npm run test:coverage    # With coverage│   │   └── templates/          # Layouts
-
-```
-
-│   │       └── MainLayout.tsx/css- ✅ **Navegación SPA**: Routing con React Router DOM sin recargas de página- **React 19** - Biblioteca de UI
-
-### Test Coverage
+│   │       └── MainLayout      # App wrapper│   ├── utils/                  # Utilities| **Pure CSS** | - | Styles without frameworks |
 
 │   │
 
-✅ **Atom Components** - TypeBadge, PokemonNumber, FavoriteButton, ValidatedSearchInput  
+│   ├── pages/│   ├── config/                 # Apollo Client config
 
-✅ **Validation Function** - validateSearchInput with multiple cases  │   ├── pages/                  # Application pages## 🚀 Tecnologías
+│   │   ├── HomePage.tsx        # List view
 
-✅ **27/27 tests passing**
-
-│   │   ├── HomePage.tsx
-
----
-
-│   │   └── DetailsPage.tsx/css- ✅ **Diseño Responsive**: Optimizado para desktop, tablet y mobile
-
-## 🎨 Key Features
+│   │   └── DetailsPage.tsx     # Detail view│   └── test/                   # Unit tests (27 tests)| **PokeAPI GraphQL** | v1beta | Pokémon data API |## ✨ Características
 
 │   │
 
-### Real-Time Validated Search
+│   ├── hooks/                  # Custom React hooks├── public/
 
-- Minimum 3 characters required│   ├── hooks/                  # Custom Hooks| Tecnología | Versión | Propósito |
+│   │   ├── usePokemons.ts      # Fetch Pokémon list
 
-- Letters only allowed
+│   │   ├── usePokemonDetails.ts│   └── _redirects              # Netlify SPA redirects
 
-- Instant visual feedback│   │   ├── usePokemonList.ts
+│   │   └── useTypes.ts         # Fetch type list
 
+│   │├── netlify.toml                # Netlify configuration
 
+│   ├── graphql/                # GraphQL queries
 
-### Sorting with Visual Indicators│   │   ├── usePokemonDetails.ts|------------|---------|-----------|- ✅ **GraphQL Client**: Consumo eficiente de datos con Apollo Client y cache- **TypeScript** - Tipado estático
+│   │   └── queries.ts└── vitest.config.ts            # Vitest configuration## 📁 Project Structure (Atomic Design)
 
-- **#** (hash) icon for number sorting
+│   │
 
-- **A** (with underline) for alphabetical sorting│   │   └── useTypes.ts
+│   ├── context/```
 
-- Icon changes dynamically
+│   │   └── FavoritesContext.tsx # Global favorites state
 
-│   │| **React** | 19.1.1 | Biblioteca de UI con hooks modernos |
+│   │
 
-### Persistent Favorites System
+│   ├── types/                  # TypeScript definitions
 
-- localStorage for persistence│   ├── graphql/                # GraphQL Queries
-
-- Smooth animations
-
-- Favorites filter│   │   └── queries.ts| **TypeScript** | 5.9.3 | Tipado estático y mejor DX |
-
-
-
-### Responsive Design│   │
-
-- **Desktop**: 4-5 columns grid
-
-- **Tablet**: 2-3 columns grid│   ├── context/                # React Context| **Vite** | 7.1.11 | Build tool ultra-rápido |
-
-- **Mobile**: 1-2 columns grid
-
-│   │   └── FavoritesContext.tsx
-
----
-
-│   │| **Apollo Client** | 4.0.7 | Cliente GraphQL con cache |## 🚀 Tecnologías- **Vite** - Build tool y dev server## 🚀 TecnologíasCurrently, two official plugins are available:
-
-## 🌐 GraphQL API
-
-│   ├── types/                  # TypeScript Definitions
-
-**Endpoint:** `https://beta.pokeapi.co/graphql/v1beta`
-
-│   │   ├── pokemon.ts| **React Router DOM** | 7.9.4 | Routing SPA |
-
-### Main Queries
+│   │   ├── pokemon.ts---
 
 │   │   └── graphql.ts
 
-- `GET_POKEMONS` - List of 151 Pokémon
+│   │```- ✅ **Lista de Pokémon**: Visualización de los 151 Pokémon originales con imágenes official artwork- ✅ **Lista de Pokémon**: Visualización de los 151 Pokémon originales con imágenes official artwork
 
-- `GET_POKEMON_DETAILS` - Complete details│   │| **Vitest** | 4.0.1 | Testing framework |
+│   ├── utils/                  # Helper functions
 
-- `SEARCH_POKEMON` - Search by name
+│   │   ├── pokemonHelpers.ts   # Formatters & validators## 🚀 Quick Start
 
-- `GET_POKEMON_TYPES` - Available types│   ├── utils/                  # Utilities and helpers
+│   │   └── typeColors.ts       # Type color mapping
 
+│   │pokedex-app/
 
+│   ├── config/
 
----│   │   └── pokemonHelpers.ts| **Testing Library** | Latest | Testing de componentes React |
+│   │   └── apolloClient.ts     # GraphQL client setup### Prerequisites
 
+│   │
 
+│   └── test/                   # Unit tests (27 tests)├── public/- ✅ **Búsqueda Validada**: Sistema de búsqueda con validación (mínimo 3 caracteres, solo letras)
 
-## 📦 Build and Deploy│   │
+│       ├── TypeBadge.test.tsx
 
+│       ├── PokemonNumber.test.tsx- Node.js 18+ 
 
+│       ├── FavoriteButton.test.tsx
 
-### Local Build│   ├── config/                 # Configurations| **CSS Puro** | - | Estilos sin frameworks || Tecnología | Versión | Propósito |- **Apollo Client** - Cliente GraphQL
+│       ├── ValidatedSearchInput.test.tsx- npm or yarn│   └── _redirects              # Netlify redirects for SPA
 
+│       └── validation.test.ts
 
+│
 
-```bash│   │   └── apolloClient.ts
+├── public/
 
-npm run build
+│   └── _redirects              # Netlify SPA routing### Installation│- ✅ **Filtrado por Tipo**: Filtra Pokémon por cualquiera de los 18 tipos disponibles- ✅ **Búsqueda Validada**: Sistema de búsqueda con validación (mínimo 3 caracteres, solo letras)
 
-```│   │| **PokeAPI GraphQL** | v1beta | API de datos de Pokémon |
+│
 
+├── netlify.toml                # Deployment config
 
+└── vitest.config.ts            # Test configuration
 
-Generates optimized files in `dist/` folder (130KB gzipped).│   └── test/                   # Unit tests
-
-
-
-### Deploy to Netlify│       ├── setup.ts|------------|---------|-----------|
-
-
-
-The project is configured for automatic deployment:│       ├── TypeBadge.test.tsx
-
-
-
-1. Connect repository on Netlify│       ├── PokemonNumber.test.tsx---
-
-2. Build settings:
-
-   - **Build command:** `npm run build`│       ├── FavoriteButton.test.tsx
-
-   - **Publish directory:** `dist`
-
-3. Deploy!│       ├── ValidatedSearchInput.test.tsx| **React** | 19.1.1 | Biblioteca de UI |- **CSS Puro** - Estilos sin frameworks CSS
+``````bash├── src/
 
 
 
-**Manual Deploy:** Drag `dist` folder to https://app.netlify.com/drop│       └── validation.test.ts
+## 🚀 Quick Start# Clone the repository
 
 
 
----│## 📁 Estructura del Proyecto (Atomic Design)
+### Prerequisitesgit clone https://github.com/Danidiaz0799/pokedex-app.git│   ├── components/             # Components organized by Atomic Design- ✅ **Ordenamiento Dinámico**: Ordena por número de Pokédex o alfabéticamente con indicador visual
 
 
 
-## ✅ Technical Test Compliance - Tita Media├── vitest.config.ts            # Vitest configuration
-
-
-
-| Requirement | Status |├── netlify.toml                # Netlify configuration| **TypeScript** | 5.9.3 | Tipado estático y mejor DX |
-
-|-------------|--------|
-
-| GraphQL with Apollo Client | ✅ |└── package.json
-
-| List of 151 Pokémon | ✅ |
-
-| Sorting (number/alphabetical) | ✅ |``````
-
-| Validated Search | ✅ |
-
-| Type Filtering | ✅ |
-
-| Details Page | ✅ |
-
-| Favorites System | ✅ |## 🚀 Quick Startpokedex-app/| **Vite** | 7.1.11 | Build tool ultra-rápido |
-
-| Unit Tests | ✅ 27 tests |
-
-| Documentation | ✅ Complete README |
-
-| No CSS Framework | ✅ Pure CSS |
-
-| Custom Hooks | ✅ |### Prerequisites├── public/
-
-| Atomic Design | ✅ |
-
-| TypeScript | ✅ |
-
-| Deployed | ✅ Netlify |
-
-- [Node.js 18+](https://nodejs.org/)│   └── _redirects          # Netlify redirects para SPA| **Apollo Client** | 3.12.10 | Cliente GraphQL con cache |
-
----
+- Node.js 18+ cd pokedex-app
 
 - npm or yarn
 
+│   │   ├── atoms/              # Basic components
+
+### Installation
+
+# Install dependencies
+
+```bash
+
+# Clone the repositorynpm install│   │   │   ├── TypeBadge.tsx/css- ✅ **Página de Detalles**: Información completa con estadísticas, peso, altura y tipos- ✅ **Filtrado por Tipo**: Filtra Pokémon por cualquiera de los 18 tipos disponibles## 🚀 TecnologíasAplicación web moderna de Pokédex construida con React, TypeScript y Vite, consumiendo la PokeAPI GraphQL.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+git clone https://github.com/Danidiaz0799/pokedex-app.git
+
+cd pokedex-app
+
+
+
+# Install dependencies# Start development server│   │   │   ├── PokemonNumber.tsx/css
+
+npm install
+
+npm run dev
+
+# Start development server
+
+npm run dev```│   │   │   ├── ValidatedSearchInput/- ✅ **Sistema de Favoritos**: Guarda tus Pokémon favoritos con persistencia en localStorage
+
+```
+
+
+
+Application will be available at: **http://localhost:5173**
+
+Application available at: **http://localhost:5173**│   │   │   ├── FavoriteButton.tsx/css
+
+### Available Scripts
+
+
+
+```bash
+
+npm run dev              # Development server with hot reload### Available Scripts│   │   │   └── StatBar.tsx/css- ✅ **Navegación SPA**: Routing con React Router DOM sin recargas de página- ✅ **Ordenamiento**: Ordena por número de Pokédex o alfabéticamente
+
+npm run build            # Build for production
+
+npm run preview          # Preview production build locally
+
+npm run lint             # Run ESLint
+
+npm test                 # Run tests in watch mode```bash│   │   │
+
+npm run test:coverage    # Generate test coverage report
+
+```npm run dev              # Development server
+
+
+
+## 🧪 Testingnpm run build            # Build for production│   │   ├── molecules/          # Atom combinations- ✅ **Diseño Responsive**: Optimizado para desktop, tablet y mobile
+
+
+
+The project includes **27 unit tests** with Vitest and Testing Library covering:npm run preview          # Preview production build
+
+
+
+### Components Testednpm run lint             # Run ESLint│   │   │   ├── PokemonCard.tsx/css
+
+- ✅ **TypeBadge** - Color rendering and type display
+
+- ✅ **PokemonNumber** - ID formatting with leading zerosnpm test                 # Tests in watch mode
+
+- ✅ **FavoriteButton** - Toggle state and click handling
+
+- ✅ **ValidatedSearchInput** - Input validation and error messagesnpm run test:coverage    # Generate coverage report│   │   │   ├── Header.tsx/css- ✅ **GraphQL Client**: Consumo eficiente de datos con Apollo Client y cache- ✅ **Página de Detalles**: Información completa con estadísticas, peso, altura y tipos
+
+
+
+### Utilities Tested```
+
+- ✅ **validateSearchInput** - 9 test cases for search validation
+
+│   │   │   └── SortDropdown/
+
+### Run Tests
+
+---
+
+```bash
+
+npm test                 # Watch mode│   │   │- ✅ **Tests Unitarios**: 27 tests pasando con Vitest y Testing Library
+
+npm test -- --run        # Single run
+
+npm run test:coverage    # With coverage report## 🧪 Testing
+
+```
+
+│   │   ├── organisms/          # Complex sections
+
+**Expected result**: `27 tests passed` ✅
+
+The project includes **27 unit tests** with Vitest and Testing Library.
+
+## 📊 Main Features
+
+│   │   │   ├── PokemonGrid.tsx/css- ✅ **Sistema de Favoritos**: Guarda tus Pokémon favoritos con persistencia en localStorage
+
+### Home Page
+
+- **Grid Layout**: 3 columns displaying all 151 Pokémon### Run Tests
+
+- **Search Bar**: Real-time validation with helpful error messages
+
+- **Type Filter**: Dropdown with all 18 Pokémon types│   │   │   └── TypeFilterList/
+
+- **Sort Toggle**: Switch between Pokédex # and Alphabetical order
+
+- **Favorites Filter**: Show only favorited Pokémon with counter badge```bash
+
+- **Responsive**: Adapts to mobile (1 column), tablet (2 columns), desktop (3 columns)
+
+npm test                 # Watch mode│   │   │---
+
+### Details Page
+
+- **Dynamic Background**: Colors change based on Pokémon's primary typenpm test -- --run        # Run once
+
+- **High-Quality Images**: Official artwork from PokeAPI
+
+- **Complete Stats**: HP, Attack, Defense, Sp. Atk, Sp. Def, Speed with visual barsnpm run test:coverage    # With coverage│   │   └── templates/          # Layouts
+
+- **Physical Data**: Weight (kg) and Height (m)
+
+- **Type Badges**: Color-coded type indicators```
+
+- **Navigation**: Previous/Next buttons to browse between Pokémon
+
+- **Favorite Toggle**: Add/remove from favorites instantly│   │       └── MainLayout.tsx/css- ✅ **Navegación SPA**: Routing con React Router DOM sin recargas de página- **React 19** - Biblioteca de UI
+
+
+
+### Search Validation Rules### Test Coverage
+
+- Minimum 3 characters required
+
+- Alphabetic characters only (no numbers or special chars)│   │
+
+- Empty input clears the search
+
+- Real-time error messages✅ **Atom Components** - TypeBadge, PokemonNumber, FavoriteButton, ValidatedSearchInput  
+
+- Case-insensitive matching
+
+✅ **Validation Function** - validateSearchInput with multiple cases  │   ├── pages/                  # Application pages## 🚀 Tecnologías
+
+## 🎨 Type Color System
+
+✅ **27/27 tests passing**
+
+Each Pokémon type has a unique color scheme:
+
+│   │   ├── HomePage.tsx
+
+```typescript
+
+Normal: #A8A878    Fire: #F08030      Water: #6890F0---
+
+Grass: #78C850     Electric: #F8D030  Ice: #98D8D8
+
+Fighting: #C03028  Poison: #A040A0    Ground: #E0C068│   │   └── DetailsPage.tsx/css- ✅ **Diseño Responsive**: Optimizado para desktop, tablet y mobile
+
+Flying: #A890F0    Psychic: #F85888   Bug: #A8B820
+
+Rock: #B8A038      Ghost: #705898     Dragon: #7038F8## 🎨 Key Features
+
+Dark: #705848      Steel: #B8B8D0     Fairy: #EE99AC
+
+```│   │
+
+
+
+## 🔧 GraphQL Integration### Real-Time Validated Search
+
+
+
+### Queries Used- Minimum 3 characters required│   ├── hooks/                  # Custom Hooks| Tecnología | Versión | Propósito |
+
+
+
+**List Pokémon:**- Letters only allowed
+
+```graphql
+
+query pokemons($limit: Int, $offset: Int) {- Instant visual feedback│   │   ├── usePokemonList.ts
+
+  pokemons(limit: $limit, offset: $offset) {
+
+    results {
+
+      id
+
+      name### Sorting with Visual Indicators│   │   ├── usePokemonDetails.ts|------------|---------|-----------|- ✅ **GraphQL Client**: Consumo eficiente de datos con Apollo Client y cache- **TypeScript** - Tipado estático
+
+      url
+
+      artwork- **#** (hash) icon for number sorting
+
+    }
+
+  }- **A** (with underline) for alphabetical sorting│   │   └── useTypes.ts
+
+}
+
+```- Icon changes dynamically
+
+
+
+**Pokémon Details:**│   │| **React** | 19.1.1 | Biblioteca de UI con hooks modernos |
+
+```graphql
+
+query pokemon($id: Int!) {### Persistent Favorites System
+
+  pokemon(id: $id) {
+
+    id- localStorage for persistence│   ├── graphql/                # GraphQL Queries
+
+    name
+
+    height- Smooth animations
+
+    weight
+
+    abilities- Favorites filter│   │   └── queries.ts| **TypeScript** | 5.9.3 | Tipado estático y mejor DX |
+
+    types
+
+    stats
+
+    sprites
+
+  }### Responsive Design│   │
+
+}
+
+```- **Desktop**: 4-5 columns grid
+
+
+
+**Type List:**- **Tablet**: 2-3 columns grid│   ├── context/                # React Context| **Vite** | 7.1.11 | Build tool ultra-rápido |
+
+```graphql
+
+query types {- **Mobile**: 1-2 columns grid
+
+  types {
+
+    results {│   │   └── FavoritesContext.tsx
+
+      name
+
+      url---
+
+    }
+
+  }│   │| **Apollo Client** | 4.0.7 | Cliente GraphQL con cache |## 🚀 Tecnologías- **Vite** - Build tool y dev server## 🚀 TecnologíasCurrently, two official plugins are available:
+
+}
+
+```## 🌐 GraphQL API
+
+
+
+### Apollo Client Configuration│   ├── types/                  # TypeScript Definitions
+
+
+
+- **Cache**: InMemoryCache for optimal performance**Endpoint:** `https://beta.pokeapi.co/graphql/v1beta`
+
+- **Endpoint**: `https://beta.pokeapi.co/graphql/v1beta`
+
+- **Error Handling**: Global error boundary│   │   ├── pokemon.ts| **React Router DOM** | 7.9.4 | Routing SPA |
+
+- **Type Policies**: Merge strategy for lists
+
+### Main Queries
+
+## 📦 Main Dependencies
+
+│   │   └── graphql.ts
+
+### Production
+
+- `react` 19.1.1- `GET_POKEMONS` - List of 151 Pokémon
+
+- `react-dom` 19.1.1
+
+- `react-router-dom` 7.9.4- `GET_POKEMON_DETAILS` - Complete details│   │| **Vitest** | 4.0.1 | Testing framework |
+
+- `@apollo/client` 4.0.7
+
+- `graphql` 16.10.1- `SEARCH_POKEMON` - Search by name
+
+
+
+### Development- `GET_POKEMON_TYPES` - Available types│   ├── utils/                  # Utilities and helpers
+
+- `typescript` 5.9.3
+
+- `vite` 7.1.11
+
+- `vitest` 4.0.1
+
+- `@testing-library/react` 16.1.0---│   │   └── pokemonHelpers.ts| **Testing Library** | Latest | Testing de componentes React |
+
+- `@testing-library/user-event` 14.6.1
+
+- `@testing-library/jest-dom` 7.0.1
+
+- `eslint` 9.21.0
+
+## 📦 Build and Deploy│   │
+
+## 🚀 Deployment
+
+
+
+### Netlify (Automatic)
+
+### Local Build│   ├── config/                 # Configurations| **CSS Puro** | - | Estilos sin frameworks || Tecnología | Versión | Propósito |- **Apollo Client** - Cliente GraphQL
+
+The app is configured for automatic deployment on Netlify:
+
+
+
+1. Connect your GitHub repository to Netlify
+
+2. Build command: `npm run build````bash│   │   └── apolloClient.ts
+
+3. Publish directory: `dist`
+
+4. The `netlify.toml` file includes all necessary configurationnpm run build
+
+
+
+### Manual Deploy```│   │| **PokeAPI GraphQL** | v1beta | API de datos de Pokémon |
+
+
+
+```bash
+
+# Build the application
+
+npm run buildGenerates optimized files in `dist/` folder (130KB gzipped).│   └── test/                   # Unit tests
+
+
+
+# The dist/ folder is ready for deployment
+
+# Upload to any static hosting service (Netlify, Vercel, GitHub Pages, etc.)
+
+```### Deploy to Netlify│       ├── setup.ts|------------|---------|-----------|
+
+
+
+### Environment Variables
+
+
+
+No environment variables required! The app uses the public PokeAPI GraphQL endpoint.The project is configured for automatic deployment:│       ├── TypeBadge.test.tsx
+
+
+
 ## 🐛 Troubleshooting
 
-├── src/
 
-### Development server won't start
 
-- Verify port 5173 is available### Installation
+### Build fails1. Connect repository on Netlify│       ├── PokemonNumber.test.tsx---
 
-- Clear cache: `rm -rf node_modules/.vite`
+- Clear node_modules: `rm -rf node_modules && npm install`
 
-- Reinstall: `npm install`│   ├── components/         # Componentes organizados por Atomic Design| **React Router DOM** | 6.29.1 | Routing SPA |## 📁 Estructura del Proyecto (Atomic Design)- **React 19** - Biblioteca de UI- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- Clear Vite cache: `rm -rf node_modules/.vite`2. Build settings:
+
+- Verify Node.js version: `node --version` (should be 18+)
+
+   - **Build command:** `npm run build`│       ├── FavoriteButton.test.tsx
+
+### Tests fail
+
+- Update snapshots: `npm test -- -u`   - **Publish directory:** `dist`
+
+- Check test setup: `src/test/setup.ts`
+
+3. Deploy!│       ├── ValidatedSearchInput.test.tsx| **React** | 19.1.1 | Biblioteca de UI |- **CSS Puro** - Estilos sin frameworks CSS
+
+### GraphQL errors
+
+- Verify internet connection
+
+- Check PokeAPI status: https://pokeapi.co/
+
+- Clear Apollo cache in browser DevTools**Manual Deploy:** Drag `dist` folder to https://app.netlify.com/drop│       └── validation.test.ts
+
+
+
+### Images not loading
+
+- Ensure official artwork URL is available in API response
+
+- Fallback to `front_default` sprite if needed---│## 📁 Estructura del Proyecto (Atomic Design)
+
+- Check browser console for CORS errors
+
+
+
+## 📝 Development Notes
+
+## ✅ Technical Test Compliance - Tita Media├── vitest.config.ts            # Vitest configuration
+
+- **Favorites**: Stored in `localStorage` with key `pokemonFavorites`
+
+- **API Limits**: No rate limiting on public PokeAPI endpoint
+
+- **Image Sources**: Priority: Official Artwork → Dream World → Front Default
+
+- **Type Coverage**: All 18 types supported with individual colors| Requirement | Status |├── netlify.toml                # Netlify configuration| **TypeScript** | 5.9.3 | Tipado estático y mejor DX |
+
+- **Browser Support**: Modern browsers (ES2020+), no IE11 support
+
+|-------------|--------|
+
+## 🛠️ Useful Commands
+
+| GraphQL with Apollo Client | ✅ |└── package.json
+
+### Development
+
+```bash| List of 151 Pokémon | ✅ |
+
+# Start with specific port
+
+npm run dev -- --port 3000| Sorting (number/alphabetical) | ✅ |``````
+
+
+
+# Build with source maps| Validated Search | ✅ |
+
+npm run build -- --sourcemap
+
+| Type Filtering | ✅ |
+
+# Preview build on specific port
+
+npm run preview -- --port 4173| Details Page | ✅ |
+
+```
+
+| Favorites System | ✅ |## 🚀 Quick Startpokedex-app/| **Vite** | 7.1.11 | Build tool ultra-rápido |
+
+### Testing
+
+```bash| Unit Tests | ✅ 27 tests |
+
+# Run specific test file
+
+npm test TypeBadge.test.tsx| Documentation | ✅ Complete README |
+
+
+
+# Run tests with UI| No CSS Framework | ✅ Pure CSS |
+
+npm test -- --ui
+
+| Custom Hooks | ✅ |### Prerequisites├── public/
+
+# Update snapshots
+
+npm test -- -u| Atomic Design | ✅ |
+
+```
+
+| TypeScript | ✅ |
+
+### Code Quality
+
+```bash| Deployed | ✅ Netlify |
+
+# Fix linting issues
+
+npm run lint -- --fix- [Node.js 18+](https://nodejs.org/)│   └── _redirects          # Netlify redirects para SPA| **Apollo Client** | 3.12.10 | Cliente GraphQL con cache |
+
+
+
+# Type check---
+
+npx tsc --noEmit
+
+```- npm or yarn
+
+
+
+## 👨‍💻 Author## 🐛 Troubleshooting
+
+
+
+**Daniel Steven Diaz**├── src/
+
+
+
+Modern Pokédex application built with React, TypeScript, and GraphQL for exploring the first generation of Pokémon.### Development server won't start
+
+
+
+---- Verify port 5173 is available### Installation
+
+
+
+## 📄 License- Clear cache: `rm -rf node_modules/.vite`
+
+
+
+This project is for educational purposes. Pokémon and all related properties are © Nintendo, Game Freak, and Creatures Inc.- Reinstall: `npm install`│   ├── components/         # Componentes organizados por Atomic Design| **React Router DOM** | 6.29.1 | Routing SPA |## 📁 Estructura del Proyecto (Atomic Design)- **React 19** - Biblioteca de UI- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+
 
 
 
