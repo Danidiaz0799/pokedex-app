@@ -1,65 +1,67 @@
 .type-filter-list {
   width: 100%;
-  padding: 1rem 0 1.5rem;
-  margin-bottom: 0.5rem;
+  padding: 1.5rem 2rem;
+  margin: 0;
+  background: linear-gradient(135deg, #7B8CDE 0%, #8B9FE8 100%);
 }
 
 .type-filter-title {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.5px;
 }
 
 .type-filter-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.625rem;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .type-filter-button {
   padding: 0;
-  border: 3px solid transparent;
+  border: none;
   background: transparent;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
 }
 
 .type-filter-button:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
 }
 
-.type-filter-button.active {
-  border-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.type-filter-button.active .type-badge {
+  box-shadow: 0 0 0 3px white, 0 4px 12px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
 
 /* Botón "All" */
 .type-filter-button:first-child {
-  padding: 0.5rem 1.25rem;
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: white;
+  padding: 0.6rem 1.5rem;
+  background-color: white;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #6C7FD8;
   transition: all 0.2s ease;
-  border: 2px solid transparent;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .type-filter-button:first-child:hover {
-  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 .type-filter-button:first-child.active {
   background-color: white;
   color: #6C7FD8;
-  border-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Estados de carga y error */
@@ -77,15 +79,20 @@
 /* Responsive */
 @media (max-width: 768px) {
   .type-filter-list {
-    padding: 1rem 0;
+    padding: 1.25rem 1rem;
   }
 
   .type-filter-title {
-    font-size: 0.8125rem;
-    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.85rem;
   }
 
   .type-filter-buttons {
-    gap: 0.5rem;
+    gap: 0.4rem;
+  }
+
+  .type-filter-button:first-child {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
   }
 }

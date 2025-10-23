@@ -1,6 +1,6 @@
 import type { Pokemon } from '../../types/pokemon';
 import { capitalize, getPokemonImageUrl } from '../../utils/pokemonHelpers';
-import { TypeBadge, PokemonNumber } from '../atoms';
+import { PokemonNumber } from '../atoms';
 import './PokemonCard.css';
 
 interface PokemonCardProps {
@@ -41,12 +41,6 @@ const PokemonCard = ({ pokemon, onClick }: PokemonCardProps) => {
       <h3 className="pokemon-card__name">
         {capitalize(pokemon.name)}
       </h3>
-      
-      <div className="pokemon-card__types">
-        {pokemon.types.map((type, index) => (
-          <TypeBadge key={index} typeName={type.type.name} />
-        ))}
-      </div>
     </article>
   );
 };

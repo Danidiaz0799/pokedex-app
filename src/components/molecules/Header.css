@@ -1,6 +1,6 @@
 .header {
   background: #DC0A2D;
-  padding: 2.5rem 3rem;
+  padding: 1.5rem 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
@@ -8,30 +8,31 @@
 }
 
 .header__container {
-  max-width: 1400px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* Brand */
 .header__brand {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .header__logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: white;
   border-radius: 50%;
-  padding: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
 .header__logo svg {
@@ -40,7 +41,7 @@
 }
 
 .header__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: white;
   margin: 0;
@@ -51,9 +52,8 @@
 .header__controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   width: 100%;
-  max-width: 600px;
 }
 
 .header__sort {
@@ -102,7 +102,27 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .header__title {
+    font-size: 2rem;
+  }
+  
+  .header__logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .header__controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem 1rem;
   }
   
   .header__title {
@@ -110,41 +130,7 @@
   }
   
   .header__logo {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 1rem 1.5rem;
-  }
-  
-  .header__title {
-    font-size: 1.5rem;
-  }
-  
-  .header__logo svg {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .header__count {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.6rem;
-  }
-  
-  .header__sort {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.5rem;
-  }
-  
-  .header__sort-label {
-    text-align: center;
-  }
-  
-  .header__sort-buttons {
-    justify-content: center;
+    width: 40px;
+    height: 40px;
   }
 }

@@ -3,8 +3,8 @@
 }
 
 .sort-dropdown__trigger {
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: white;
   border: none;
@@ -14,6 +14,7 @@
   justify-content: center;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .sort-dropdown__trigger:hover {
@@ -24,6 +25,8 @@
 .sort-dropdown__trigger svg {
   color: #DC0A2D;
   stroke-width: 2.5;
+  width: 24px;
+  height: 24px;
 }
 
 .sort-dropdown__menu {

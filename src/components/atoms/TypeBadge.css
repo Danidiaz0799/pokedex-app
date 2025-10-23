@@ -1,14 +1,19 @@
 .type-badge {
   display: inline-block;
-  padding: 0.375rem 0.875rem;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: white;
   text-transform: capitalize;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.5px;
   white-space: nowrap;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.type-badge:hover {
+  transform: scale(1.05);
 }
 
 /* Para el tipo Electric que tiene fondo amarillo */

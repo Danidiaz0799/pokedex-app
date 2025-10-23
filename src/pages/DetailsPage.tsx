@@ -64,7 +64,10 @@ const DetailsPage = () => {
   };
 
   return (
-    <div className="details-page" style={{ backgroundColor }}>
+    <div className="details-page" style={{ 
+      backgroundColor, 
+      '--type-color': backgroundColor 
+    } as React.CSSProperties}>
       {/* Header con botón de volver */}
       <header className="details-header">
         <button className="back-button" onClick={() => navigate(-1)}>
@@ -111,28 +114,28 @@ const DetailsPage = () => {
           <div className="details-info-grid">
             <div className="details-info-item">
               <div className="details-info-item__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <div>
-                <div className="details-info-item__value">{(pokemon.weight || 0) / 10} kg</div>
-                <div className="details-info-item__label">Weight</div>
-              </div>
+              <div className="details-info-item__value">{(pokemon.weight || 0) / 10} kg</div>
+              <div className="details-info-item__label">Weight</div>
             </div>
 
             <div className="details-info-item">
               <div className="details-info-item__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M12 2v20M8 6h8M8 12h8M8 18h8" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <div>
-                <div className="details-info-item__value">{(pokemon.height || 0) / 10} m</div>
-                <div className="details-info-item__label">Height</div>
-              </div>
+              <div className="details-info-item__value">{(pokemon.height || 0) / 10} m</div>
+              <div className="details-info-item__label">Height</div>
             </div>
           </div>
+          
+          <p className="details-description">
+            A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.
+          </p>
         </section>
 
         {/* Sección Base Stats */}
