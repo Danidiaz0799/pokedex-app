@@ -161,8 +161,29 @@
   }
 
   .header__controls {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.75rem;
+  }
+
+  /* Búsqueda ocupa toda la fila */
+  .header__controls > .search-input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  /* Segunda fila: favoritos, filtro de tipos y ordenamiento */
+  .header__controls > .type-filter-list {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .header__controls > .header__favorites-btn {
+    flex-shrink: 0;
+  }
+
+  .header__controls > .sort-dropdown {
+    flex-shrink: 0;
   }
 }
 

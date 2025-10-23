@@ -108,8 +108,13 @@
 }
 
 @media (max-width: 768px) {
+  .type-filter-list {
+    width: 100%;
+  }
+
   .type-filter-trigger {
-    min-width: 120px;
+    width: 100%;
+    min-width: auto;
     padding: 0.5rem 0.8rem;
     font-size: 0.9rem;
   }

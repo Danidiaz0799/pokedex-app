@@ -142,12 +142,15 @@ const DetailsPage = () => {
 
         {/* Imagen del Pokémon */}
         <div className="details-image-container">
-        <img 
-          src={getPokemonImageUrl(pokemon)} 
-          alt={pokemon.name}
-          className="details-image"
-        />
-      </div>
+          <div className="details-image-watermark">
+            <PokeballIcon size={200} color="rgba(255, 255, 255, 0.15)" />
+          </div>
+          <img 
+            src={getPokemonImageUrl(pokemon)} 
+            alt={pokemon.name}
+            className="details-image"
+          />
+        </div>
 
       {/* Contenido principal */}
       <div className="details-content">

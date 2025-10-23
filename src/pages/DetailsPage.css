@@ -170,6 +170,16 @@
   z-index: 10;
 }
 
+.details-image-watermark {
+  position: absolute;
+  top: 40%;
+  right: 280px;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
 .details-image {
   position: relative;
   width: 300px;
@@ -183,7 +193,7 @@
 .details-content {
   background: white;
   border-radius: 40px 40px 0 0;
-  padding: 5rem 2rem 3rem;
+  padding: 2rem 2rem 3rem;
   position: relative;
   z-index: 3;
   box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1);
