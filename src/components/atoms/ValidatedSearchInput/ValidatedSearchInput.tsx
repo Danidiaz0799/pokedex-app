@@ -12,7 +12,8 @@ interface ValidatedSearchInputProps {
 /**
  * Atom: ValidatedSearchInput
  * Input de búsqueda con validación de entrada
- * - Solo letras (sin números ni caracteres especiales)
+ * - Letras y números (sin caracteres especiales)
+ * - Permite buscar por nombre o número de Pokémon
  */
 const ValidatedSearchInput = ({ 
   value, 

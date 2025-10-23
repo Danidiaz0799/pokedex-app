@@ -93,7 +93,7 @@ export const sortPokemonByNumber = (pokemons: Pokemon[]): Pokemon[] => {
 export const filterPokemons = (pokemons: Pokemon[], searchTerm: string): Pokemon[] => {
   if (!searchTerm) return pokemons;
 
-  const term = searchTerm.toLowerCase().replace('#', '');
+  const term = searchTerm.toLowerCase().replace('#', '').trim();
   
   return pokemons.filter((pokemon) => {
     // Buscar por nombre
@@ -101,8 +101,14 @@ export const filterPokemons = (pokemons: Pokemon[], searchTerm: string): Pokemon
       return true;
     }
     
-    // Buscar por número
-    if (pokemon.id.toString().includes(term)) {
+    // Buscar por número exacto (1, 25, 150)
+    if (pokemon.id.toString() === term) {
+      return true;
+    }
+    
+    // Buscar por número formateado con ceros (001, 025, 150)
+    const formattedNumber = pokemon.id.toString().padStart(3, '0');
+    if (formattedNumber === term || formattedNumber.includes(term)) {
       return true;
     }
     
@@ -162,7 +168,7 @@ export interface ValidationResult {
 /**
  * Valida la entrada de búsqueda
  * Reglas:
- * - Solo letras (sin números ni caracteres especiales)
+ * - Solo letras y números (sin caracteres especiales)
  * - Permite cadena vacía (para limpiar búsqueda)
  */
 export const validateSearchInput = (input: string): ValidationResult => {
@@ -171,12 +177,12 @@ export const validateSearchInput = (input: string): ValidationResult => {
     return { isValid: true };
   }
 
-  // Validar que solo contenga letras (sin números ni caracteres especiales)
-  const onlyLettersRegex = /^[a-zA-Z\s]+$/;
-  if (!onlyLettersRegex.test(input)) {
+  // Validar que solo contenga letras y números (sin caracteres especiales)
+  const alphanumericRegex = /^[a-zA-Z0-9\s]+$/;
+  if (!alphanumericRegex.test(input)) {
     return {
       isValid: false,
-      errorMessage: 'Search can only contain letters',
+      errorMessage: 'Search can only contain letters and numbers',
     };
   }
 

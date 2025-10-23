@@ -6,29 +6,34 @@ describe('validateSearchInput', () => {
     expect(validateSearchInput('')).toEqual({ isValid: true });
   });
 
-  it('retorna error cuando tiene menos de 3 caracteres', () => {
-    expect(validateSearchInput('pi')).toEqual({
-      isValid: false,
-      errorMessage: 'Search must be at least 3 characters',
-    });
-  });
-
   it('retorna isValid true para un nombre válido', () => {
     const result = validateSearchInput('pikachu');
     expect(result.isValid).toBe(true);
   });
 
-  it('retorna error cuando contiene números', () => {
+  it('retorna isValid true cuando contiene números', () => {
+    expect(validateSearchInput('001')).toEqual({
+      isValid: true,
+    });
+  });
+
+  it('retorna isValid true para búsqueda mixta (letras y números)', () => {
     expect(validateSearchInput('pika123')).toEqual({
-      isValid: false,
-      errorMessage: 'Search can only contain letters',
+      isValid: true,
     });
   });
 
   it('retorna error cuando contiene caracteres especiales', () => {
     expect(validateSearchInput('pika!')).toEqual({
       isValid: false,
-      errorMessage: 'Search can only contain letters',
+      errorMessage: 'Search can only contain letters and numbers',
+    });
+  });
+
+  it('retorna error cuando contiene #', () => {
+    expect(validateSearchInput('#001')).toEqual({
+      isValid: false,
+      errorMessage: 'Search can only contain letters and numbers',
     });
   });
 
@@ -48,6 +53,16 @@ describe('validateSearchInput', () => {
 
   it('acepta nombres mezclados', () => {
     const result = validateSearchInput('PiKaChU');
+    expect(result.isValid).toBe(true);
+  });
+
+  it('acepta solo números', () => {
+    const result = validateSearchInput('001');
+    expect(result.isValid).toBe(true);
+  });
+
+  it('acepta números sin ceros', () => {
+    const result = validateSearchInput('1');
     expect(result.isValid).toBe(true);
   });
 });
