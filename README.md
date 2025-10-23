@@ -28,8 +28,8 @@ Se implementaron todas las funcionalidades solicitadas en la prueba técnica, en
 | **Interacción** | Detalles del Pokémon | Navegación a una vista detallada con imagen, tipos, **número de generación**, peso, altura y estadísticas base. |
 | **Interacción** | Agregar a Favoritos | Botón para guardar Pokémon en `localStorage` usando Context API. |
 | **Mockup** | Filtrar por Tipo | Opción para filtrar la lista principal por cualquiera de los **18 tipos** de Pokémon. |
-![alt text](image-1.png)
 ---
+![alt text](image-1.png)
 
 ## 🏗️ Arquitectura y Stack Tecnológico
 
