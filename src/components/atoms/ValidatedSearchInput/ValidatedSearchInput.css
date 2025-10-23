@@ -1,0 +1,122 @@
+.validated-search-container {
+  width: 100%;
+}
+
+.validated-search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 1.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.validated-search-input-wrapper:focus-within {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.validated-search-input-wrapper.has-error {
+  border: 2px solid #d32f2f;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.2);
+}
+
+.validated-search-input-wrapper.has-error:focus-within {
+  box-shadow: 0 4px 16px rgba(211, 47, 47, 0.25);
+}
+
+.search-icon {
+  color: #999;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.5;
+}
+
+.validated-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.125rem;
+  font-family: inherit;
+  background: transparent;
+  color: #1a1a1a;
+  font-weight: 400;
+}
+
+.validated-search-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.clear-button:hover {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.validation-error {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #ffebee;
+  border-left: 3px solid #d32f2f;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  color: #c62828;
+  animation: slideDown 0.2s ease-out;
+}
+
+.error-icon {
+  flex-shrink: 0;
+  color: #d32f2f;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .validated-search-input-wrapper {
+    padding: 0.4375rem 0.875rem;
+  }
+
+  .validated-search-input {
+    font-size: 0.875rem;
+  }
+
+  .validation-error {
+    font-size: 0.75rem;
+    padding: 0.4375rem 0.625rem;
+  }
+}

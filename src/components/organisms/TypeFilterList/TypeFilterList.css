@@ -1,0 +1,91 @@
+.type-filter-list {
+  width: 100%;
+  padding: 1rem 0 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.type-filter-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.type-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  align-items: center;
+}
+
+.type-filter-button {
+  padding: 0;
+  border: 3px solid transparent;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.type-filter-button:hover {
+  transform: scale(1.05);
+}
+
+.type-filter-button.active {
+  border-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+/* Botón "All" */
+.type-filter-button:first-child {
+  padding: 0.5rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.type-filter-button:first-child:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.type-filter-button:first-child.active {
+  background-color: white;
+  color: #6C7FD8;
+  border-color: white;
+}
+
+/* Estados de carga y error */
+.type-filter-loading,
+.type-filter-error {
+  font-size: 0.875rem;
+  color: white;
+  padding: 1rem;
+}
+
+.type-filter-error {
+  color: #ffebee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .type-filter-list {
+    padding: 1rem 0;
+  }
+
+  .type-filter-title {
+    font-size: 0.8125rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .type-filter-buttons {
+    gap: 0.5rem;
+  }
+}

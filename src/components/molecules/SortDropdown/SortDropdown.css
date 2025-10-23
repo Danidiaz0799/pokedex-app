@@ -1,0 +1,133 @@
+.sort-dropdown {
+  position: relative;
+}
+
+.sort-dropdown__trigger {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sort-dropdown__trigger:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.sort-dropdown__trigger svg {
+  color: #DC0A2D;
+  stroke-width: 2.5;
+}
+
+.sort-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: -0.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  min-width: 180px;
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out;
+  border: 3px solid #DC0A2D;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sort-dropdown__header {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: #DC0A2D;
+  margin: -1rem -1rem 0.75rem -1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+
+.sort-dropdown__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sort-dropdown__option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.sort-dropdown__option:hover {
+  background: #f5f5f5;
+}
+
+.sort-dropdown__radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sort-dropdown__radio-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sort-dropdown__radio:checked + .sort-dropdown__radio-custom {
+  border-color: #DC0A2D;
+  background: #DC0A2D;
+}
+
+.sort-dropdown__radio:checked + .sort-dropdown__radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.sort-dropdown__label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sort-dropdown__menu {
+    right: -10px;
+    min-width: 160px;
+  }
+}

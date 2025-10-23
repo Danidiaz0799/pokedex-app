@@ -1,0 +1,18 @@
+.type-badge {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Para el tipo Electric que tiene fondo amarillo */
+.type-badge[style*="F8D030"],
+.type-badge[style*="f8d030"] {
+  color: #333;
+}

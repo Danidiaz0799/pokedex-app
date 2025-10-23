@@ -1,0 +1,54 @@
+/* App.css - Estilos globales de la aplicación */
+
+/* Error container */
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+.error-message {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+}
+
+.error-message svg {
+  color: #dc0a2d;
+  margin-bottom: 1.5rem;
+}
+
+.error-message h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.error-message p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.error-message button {
+  padding: 0.8rem 2rem;
+  background: #dc0a2d;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.error-message button:hover {
+  background: #b8082a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 10, 45, 0.3);
+}

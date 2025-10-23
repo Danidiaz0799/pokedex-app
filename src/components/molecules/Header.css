@@ -1,0 +1,150 @@
+.header {
+  background: #DC0A2D;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Brand */
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header__logo svg {
+  stroke: #DC0A2D;
+  stroke-width: 2.5;
+}
+
+.header__title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Controls */
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.header__sort {
+  position: relative;
+}
+
+.header__sort-label {
+  display: none;
+}
+
+.header__sort-buttons {
+  display: flex;
+  gap: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1.25rem 1.5rem;
+  }
+  
+  .header__container {
+    flex-wrap: wrap;
+  }
+  
+  .header__brand {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .header__controls {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .header__search {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .header__sort {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  
+  .header__title {
+    font-size: 1.75rem;
+  }
+  
+  .header__logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  
+  .header__title {
+    font-size: 1.5rem;
+  }
+  
+  .header__logo svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .header__count {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .header__sort {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .header__sort-label {
+    text-align: center;
+  }
+  
+  .header__sort-buttons {
+    justify-content: center;
+  }
+}
