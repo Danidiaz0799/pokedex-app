@@ -109,10 +109,11 @@ button:focus-visible {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-red);
+  background: white;
   border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8082a;
+  background: #f5f5f5;
 }
