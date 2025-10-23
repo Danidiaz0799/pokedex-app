@@ -165,12 +165,13 @@ const DetailsPage = () => {
         <section className="details-section">
           <h2 className="details-section__title">About</h2>
           
-          {/* Info Grid (Weight & Height) */}
+          {/* Info Grid (Weight, Height & Moves) */}
           <div className="details-info-grid">
             <div className="details-info-item">
               <div className="details-info-item__icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" strokeWidth="2" strokeLinecap="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="6" r="2"/>
+                  <path d="M12 8v3m0 0a4 4 0 0 1-4 4H6a2 2 0 0 1-2-2v-1m8-1a4 4 0 0 0 4 4h2a2 2 0 0 0 2-2v-1"/>
                 </svg>
               </div>
               <div className="details-info-item__value">{(pokemon.weight || 0) / 10} kg</div>
@@ -179,12 +180,23 @@ const DetailsPage = () => {
 
             <div className="details-info-item">
               <div className="details-info-item__icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M12 2v20M8 6h8M8 12h8M8 18h8" strokeWidth="2" strokeLinecap="round"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 3v18h18"/>
+                  <path d="M7 16l4-8 4 8"/>
+                  <line x1="8" y1="13" x2="14" y2="13"/>
                 </svg>
               </div>
               <div className="details-info-item__value">{(pokemon.height || 0) / 10} m</div>
               <div className="details-info-item__label">Height</div>
+            </div>
+
+            <div className="details-info-item">
+              <div className="details-info-item__value">
+                {pokemon.abilities && pokemon.abilities.length > 0 
+                  ? capitalize(pokemon.abilities[0].ability.name.replace(/-/g, ' '))
+                  : 'Unknown'}
+              </div>
+              <div className="details-info-item__label">Moves</div>
             </div>
           </div>
           

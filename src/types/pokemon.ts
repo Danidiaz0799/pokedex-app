@@ -30,6 +30,13 @@ export interface PokemonStat {
   };
 }
 
+// Habilidades del Pokémon
+export interface PokemonAbility {
+  ability: {
+    name: string;
+  };
+}
+
 // Estructura completa de un Pokémon
 export interface Pokemon {
   id: number;
@@ -39,6 +46,7 @@ export interface Pokemon {
   height?: number;
   weight?: number;
   stats?: PokemonStat[];
+  abilities?: PokemonAbility[];
   species?: {
     flavor_text_entries?: Array<{
       flavor_text: string;

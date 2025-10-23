@@ -23,6 +23,11 @@ export interface RawPokemonData {
       name: string;
     };
   }>;
+  pokemon_v2_pokemonabilities?: Array<{
+    pokemon_v2_ability: {
+      name: string;
+    };
+  }>;
   pokemon_v2_pokemonspecy?: {
     pokemon_v2_pokemonspeciesflavortexts?: Array<{
       flavor_text: string;

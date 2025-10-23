@@ -47,6 +47,11 @@ export const GET_POKEMON_DETAILS = gql`
           name
         }
       }
+      pokemon_v2_pokemonabilities {
+        pokemon_v2_ability {
+          name
+        }
+      }
       pokemon_v2_pokemonspecy {
         pokemon_v2_pokemonspeciesflavortexts(
           where: { language_id: { _eq: 9 } }

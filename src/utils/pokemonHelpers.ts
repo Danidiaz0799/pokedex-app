@@ -46,6 +46,13 @@ export const transformPokemonData = (rawData: RawPokemonData): Pokemon => {
     },
   })) || undefined;
 
+  // Transformar abilities si existen
+  const abilities = rawData.pokemon_v2_pokemonabilities?.map((a) => ({
+    ability: {
+      name: a.pokemon_v2_ability.name,
+    },
+  })) || undefined;
+
   return {
     id: rawData.id,
     name: rawData.name,
@@ -54,6 +61,7 @@ export const transformPokemonData = (rawData: RawPokemonData): Pokemon => {
     height: rawData.height,
     weight: rawData.weight,
     stats,
+    abilities,
   };
 };
 
